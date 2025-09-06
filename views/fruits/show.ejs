@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= fruit.name %></title> <!-- Dynamic title based on fruit name -->
+     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
 
@@ -19,7 +20,9 @@
 </form>
 <!-- edit page link -->
 <a href="/fruits/<%= fruit._id %>/edit">Edit <%= fruit.name %></a>
-<a href="/fruits">Back to Fruits</a>
+<a class="fruits-index-link" href="/fruits">
+     <div class="index-link-text">Back to Fruits</div>
+   </a>
 
 </body>
 </html>

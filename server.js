@@ -6,6 +6,8 @@ const express = require('express');
 const methodOverride = require("method-override"); // new
 const morgan = require('morgan');
 
+ const path = require("path");
+
 const PORT = process.env.PORT || 3000;
 
 const app = express();
@@ -31,6 +33,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method")); // new
 
 app.use(morgan('dev'));
+
+
+ app.use(express.static(path.join(__dirname, "public")));
+
+
+ app.get("/", async (req, res) => {
+   res.render("index.ejs");
+ });
+
+
 // Routes
 
 // GET /
